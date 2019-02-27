@@ -87,18 +87,38 @@ Ok, so if you followed the instructions above and got the GGsync.jar program run
 #### 2.1 Open GGsync.java in a text editor and go to line 178.
 
 You'll see a line that looks like this:
+
 scheduleGetEvents.setMember(MemberType.USER, garoonUid);
 
-Comment that line out, and add a line underneath it like this (replace 7 with the facility ID you got from step 1):
+Comment that line out and add this: 
+
 scheduleGetEvents.setMember(MemberType.FACILITY, 7);
 
-#### 2.2 Save GGsync.java
+(make sure to replace "7" with the facility ID you got from step 1)
+
+#### 2.2 Go to line 372 of GGsync.java
+
+You'll see a line that looks like this:
+
+scheduleLocation = garoonSchedular.getFacilitiesInfo(facilitiesElement);
+
+Comment that out, and change it to this:
+
+scheduleLocation = "https://zoom.us/j/1234567890";
+
+(but change the "1234567890" portion to the Meeting ID for your Zoom Room. You can find the Zoom Room Meeting ID by tapping "settings" on the Zoom Room controller tablet)
+
+#### 2.3 Save GGsync.java
+
 
 
 ### 3. Install gradle
 
-Now we need to build the program. Cybozu included the gradle build with the source code so this is fairly simple.
-Just install gradle ("brew install gradle" if you're using brew on MacOS)
+You have to install gradle in order to build the executable file. If you're on mac and using brew, use this command to install gradle:
+
+  brew install gradle
+  
+Otherwise, refer to Gradle's website for installation instructions.
 
 
 ### 4. Rebuild the project
@@ -107,9 +127,12 @@ Open up a terminal, and run this command in the directory that contains the "bui
 
   gradle build
 
-You should see something like "BUILD SUCCESSFUL in 22s" and there will be a new "build" folder in your current directory.
+You should see something like "BUILD SUCCESSFUL in 22s" and there will be a new "build" folder in your current directory. There should be a file at /build/libs called "GGsync.jar". Rename that file to something unique like "GGsync-trestles.jar"
 
-....... wip
+
+### 5. Set up your properties file and run the program
+
+Now you just need to follow the original Cybozu instructions to enter in your garoon username and password, and provide your G-suite service account and calendar resource info. After that, run the .jar file that you just made, and it should sync all events that are scheduled in the Garoon facility that you selected to your Google calendar. It will put the "https
 
 
 ## License
