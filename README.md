@@ -116,7 +116,9 @@ scheduleLocation = "https://zoom.us/j/1234567890";
 
 You have to install gradle in order to build the executable file. If you're on mac and using brew, use this command to install gradle:
 
-  brew install gradle
+```sh
+brew install gradle
+```
   
 Otherwise, refer to Gradle's website for installation instructions.
 
@@ -125,15 +127,27 @@ Otherwise, refer to Gradle's website for installation instructions.
 
 Open up a terminal, and run this command in the directory that contains the "build.gradle" file:
 
-  gradle build
+```sh
+gradle build
+```
 
-You should see something like "BUILD SUCCESSFUL in 22s" and there will be a new "build" folder in your current directory. There should be a file at /build/libs called "GGsync.jar". Rename that file to something unique like "GGsync-trestles.jar"
+You should see something like "BUILD SUCCESSFUL in ##s" and there will be a new "build" folder in your current directory. There should be a file at /build/libs called "GGsync.jar". Rename that file to something unique like "GGsync-trestles.jar"
 
 
 ### 5. Set up your properties file and run the program
 
-Now you just need to follow the original Cybozu instructions to enter in your garoon username and password, and provide your G-suite service account and calendar resource info. After that, run the .jar file that you just made, and it should sync all events that are scheduled in the Garoon facility that you selected to your Google calendar. It will put the "https
+Now you just need to follow the original Cybozu instructions to enter in your garoon username and password, and provide your G-suite service account and calendar resource info. After that, run the GGsync-trestles.jar (or whatever you named it) file that you just made, and it should sync all events that are scheduled in the Garoon facility that you selected to your Google calendar. 
 
+
+### 6. Integrate your google calendar with your Zoom Room
+
+Follow the instructions on Zoom's website to integrate your Google Calendar with your Zoom Room:
+https://support.zoom.us/hc/en-us/articles/206905656-Setting-Up-Zoom-Rooms-with-Google-Calendar
+
+
+### Rinse and Repeat
+
+Repeat steps 2, 4, 5, and 6 for each Garoon facility you want to sync with Zoom. You'll need to keep each new "GGsync-FACILITY.jar" file in its own directory, with its own GGsync.properties file and google auth files. Once you have created and tested all the java executables you need, just set up the programs to run automatically every 10 minutes or so (using task scheduler / cron / etc.) and voila! Your Garoon facility schedules are now automatically synced to your Zoom Rooms schedules. 
 
 ## License
 
