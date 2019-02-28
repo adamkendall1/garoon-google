@@ -85,24 +85,29 @@ Ok, so if you followed the instructions above and got the GGsync.jar program run
 
 You'll see a line that looks like this:
 
+```sh
 scheduleGetEvents.setMember(MemberType.USER, garoonUid);
+```
 
 Comment that line out and add this: 
 
+```sh
 scheduleGetEvents.setMember(MemberType.FACILITY, 7);
-
+```
 (make sure to replace "7" with the facility ID you got from step 1)
 
 #### 2.2 Go to line 372 of GGsync.java
 
 You'll see a line that looks like this:
 
+```sh
 scheduleLocation = garoonSchedular.getFacilitiesInfo(facilitiesElement);
+```
 
 Comment that out, and change it to this:
-
+```sh
 scheduleLocation = "https://zoom.us/j/1234567890";
-
+```
 (but change the "1234567890" portion to the Meeting ID for your Zoom Room. You can find the Zoom Room Meeting ID by tapping "settings" on the Zoom Room controller tablet)
 
 #### 2.3 Save GGsync.java
