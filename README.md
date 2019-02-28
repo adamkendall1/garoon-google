@@ -1,9 +1,6 @@
 ## garoon-google-zoom-rooms
 
-I made this fork as a quick and dirty way to sync all Garoon facility events to corresponding Zoom Rooms.
-This readme pertains specifically to the hosted cloud version of Garoon.
-
-First, follow the directions from Cybozu below to see how syncing your personal Garoon schedule to a G-suite calendar works.
+First, follow the directions from Cybozu below (and on their website in Japanese) to see how syncing your personal Garoon schedule to a G-suite calendar works.
 Then take a look at the "How to sync to Zoom Rooms" section that I appended below. 
 
 
